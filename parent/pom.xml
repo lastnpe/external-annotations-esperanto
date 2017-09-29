@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.lastnpe.esperanto</groupId>
+  <artifactId>parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>External Java Annotations Esperanto</name>
+  <description>Tooling to convert different representations of externalized Java annotations to &amp; fro' each other</description>
+  <url>https://lastnpe.org</url>
+  <inceptionYear>2017</inceptionYear>
+
+  <scm>
+    <connection>https://github.com/lastnpe/external-annotations-esperanto.git</connection>
+    <developerConnection>scm:git:git@github.com:lastnpe/external-annotations-esperanto.git</developerConnection>
+    <url>https://github.com/lastnpe/external-annotations-esperanto</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>Eclipse Public License v1.0</name>
+      <url>http://www.eclipse.org/legal/epl-v10.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <organization>
+    <name>Michael Vorburger</name>
+    <url>http://www.vorburger.ch</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>vorburger</id>
+      <name>Michael Vorburger</name>
+      <email>mike@vorburger.ch</email>
+      <url>http://www.vorburger.ch</url>
+    </developer>
+  </developers>
+  <contributors>
+    <contributor>
+      <name>Please see https://github.com/lastnpe/external-annotations-esperanto/graphs/contributors</name>
+    </contributor>
+  </contributors>
+
+  <distributionManagement>
+    <!-- http://central.sonatype.org/pages/apache-maven.html -->
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <!-- <repository> isn't needed with nexus-staging-maven-plugin, it somehow
+         has this hard-coded or automatically find sit somehow, IFF <version> is non-SNAPSHOT -->
+  </distributionManagement>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.20.1</version>
+      </plugin>
+      <!-- TODO maven-source-plugin & maven-javadoc-plugin ...-->
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.7</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>ossrh</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.eclipse.jdt</groupId>
+      <artifactId>org.eclipse.jdt.annotation</artifactId>
+      <version>2.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.21</version>
+    </dependency>
+  </dependencies>
+</project>
