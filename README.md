@@ -8,7 +8,7 @@
 * Regular plain good old valid Java syntax sources
 * _Checker Framework Stubs (`.astub`) ?_
 * [Annotation File Format from Checker Framework Support](https://checkerframework.org/annotation-file-utilities/annotation-file-format.html) with their **[similar tool](https://github.com/typetools/annotation-tools)**
-* [NullAway Library Models](https://github.com/uber/NullAway/wiki/Configuration#library-models)
+* NullAway [Library Models](https://github.com/uber/NullAway/wiki/Configuration#library-models) and [`*.astubx`](https://github.com/lastnpe/external-annotations-esperanto/issues/3)
 * [JSpecify JDK nullness information](https://github.com/enola-dev/enola/issues/845#issuecomment-2299888800) ?
 * ...
 
